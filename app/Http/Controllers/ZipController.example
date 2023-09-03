@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use ZipArchive;
+use File;
+
+class ZipController extends Controller
+{
+    public function zipFile()
+    {
+        // $zip = new ZipArchive;
+        // $fileName = 'myzip.zip';
+        // if ($zip->open(public_path($fileName), ZipArchive::CREATE) === TRUE)
+        // {
+        //     $files = File::files(public_path('storage/post-image'));
+        //     foreach($files as $file)
+        //     {
+        //         $relativeNameInZipFile = basename($file);
+        //         $zip->addFile($file, $relativeNameInZipFile);
+        //     }
+        //     $zip->close();
+        // }
+        
+        $fileName = public_path('img/Capture.zip');
+        return response()->download($fileName);
+    }
+}
